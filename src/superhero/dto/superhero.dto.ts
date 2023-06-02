@@ -1,4 +1,4 @@
-import { IsEmail, IsString, Length } from 'class-validator';
+import { IsString, Length } from 'class-validator';
 
 export class CreateSuperheroDto {
   @IsString()
@@ -10,7 +10,7 @@ export class CreateSuperheroDto {
   real_name: string;
 
   @IsString()
-  @Length(10, 200)
+  @Length(10, 2000)
   origin_description: string;
 
   @IsString()
@@ -20,4 +20,10 @@ export class CreateSuperheroDto {
   @IsString()
   @Length(10, 200)
   catch_phrase: string;
+  images: IHeroImg[];
+}
+
+export interface IHeroImg {
+  name: string;
+  path: string;
 }
